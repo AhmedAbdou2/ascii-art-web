@@ -1,0 +1,76 @@
+{{define "content"}}
+<div id="generator" class="page">
+  <div class="generator-container">
+    <h2 class="page-title">ASCII Art Generator</h2>
+
+    <form action="/ascii-art" method="POST" class="input-section">
+      <label for="textInput">Enter Your Text:</label>
+
+      <textarea
+        id="textInput"
+        name="text"
+        rows="4"
+        placeholder="Type something..."
+      >{{.UserInput}}</textarea>
+
+      <label>Choose Banner Style:</label>
+
+      <div class="banner-group">
+        <label class="banner-option">
+          <input
+            type="radio"
+            name="banner"
+            value="standard"
+            {{if or (eq .Banner "standard") (eq .Banner "")}}checked{{end}}
+          />
+          <span>✨ Standard</span>
+        </label>
+
+        <label class="banner-option">
+          <input
+            type="radio"
+            name="banner"
+            value="shadow"
+            {{if eq .Banner "shadow"}}checked{{end}}
+          />
+          <span>🌑 Shadow</span>
+        </label>
+
+        <label class="banner-option">
+          <input
+            type="radio"
+            name="banner"
+            value="thinkertoy"
+            {{if eq .Banner "thinkertoy"}}checked{{end}}
+          />
+          <span>🎨 Thinkertoy</span>
+        </label>
+      </div>
+
+      <button type="submit" class="btn-generate">
+        <span>🎨 Generate ASCII Art</span>
+      </button>
+    </form>
+
+    {{if .Error}}
+    <div class="output-section">
+      <div class="output-header">
+        <h3>Error</h3>
+      </div>
+      <pre class="ascii-output">{{.Error}}</pre>
+    </div>
+    {{end}}
+
+    {{if .AsciiArt}}
+    
+</div>
+
+<div class="output-section">
+      <div class="output-header">
+        <h3>✨ Your ASCII Art ✨</h3>
+      </div>
+      <pre id="asciiOutput" class="ascii-output">{{.AsciiArt}}</pre>
+    </div>
+    {{end}}
+  </div>
+{{end}}

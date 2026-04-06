@@ -1,0 +1,64 @@
+{{define "content"}}
+<div id="about" class="page">
+  <div class="about-container">
+    <h2 class="page-title">About The Project</h2>
+
+    <div class="about-grid">
+      <div class="about-card">
+        <div class="card-icon">💡</div>
+        <h3>Project Overview</h3>
+        <p>
+          This project is a web version of ASCII Art. It lets users enter text
+          in the browser and convert it into styled ASCII output using a simple.
+        </p>
+      </div>
+
+      <div class="about-card">
+        <div class="card-icon">⚙️</div>
+        <h3>How It Works</h3>
+        <p>
+          The user submits text and selects a banner. The Go server processes
+          the request, generates the ASCII art output, and returns the result
+        </p>
+      </div>
+
+      <div class="about-card">
+        <div class="card-icon">🎨</div>
+        <h3>Available Banners</h3>
+        <p>
+          The project supports three banner styles: standard, shadow, and
+          thinkertoy. Each one gives the same text a different ASCII art.
+        </p>
+      </div>
+
+      <div class="about-card">
+        <div class="card-icon">🌐</div>
+        <h3>HTTP Endpoints</h3>
+        <p>
+          The app uses GET / for the main page and POST /ascii-art for form
+          submission. These routes handle rendering and generating the final
+          ASCII.
+        </p>
+      </div>
+
+      <div class="about-card">
+        <div class="card-icon">🛡️</div>
+        <h3>Error Handling</h3>
+        <p>
+          The server returns proper status codes for valid and invalid requests.
+          It handles missing files, bad input, and unexpected internal errors.
+        </p>
+      </div>
+
+      <div class="about-card">
+        <div class="card-icon">💻</div>
+        <h3>Tech Stack</h3>
+        <p>
+          The project is built with Go, HTML templates, and CSS only. It uses
+          standard Go packages without any external frameworks.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}
