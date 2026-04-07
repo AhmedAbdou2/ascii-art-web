@@ -7,7 +7,8 @@ import (
 )
 
 func Routes() http.Handler {
-	h := &handlers.Handlers{}
+	h := handlers.NewHandlers()
+
 	mux := http.NewServeMux()
 
 	fs := http.FileServer(http.Dir("./static"))
